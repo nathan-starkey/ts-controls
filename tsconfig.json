@@ -1,0 +1,6 @@
+{
+  "files": ["ts-controls.ts"],
+  "compilerOptions": {
+    "target": "ES6"
+  }
+}

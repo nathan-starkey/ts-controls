@@ -1,0 +1,33 @@
+<html>
+  <body>
+    <script src="ts-controls.js"></script>
+
+    <script>
+      let {
+        Node,
+        TextBox,
+        NumberBox,
+        CheckBox,
+        TextArea,
+        SelectBox,
+        Button,
+        TextOutput,
+        Table,
+        List
+      } = TSControls;
+
+      let out;
+      let node = new Node(new List(), new Node(new Table(), [
+        ["name", new Node(new TextBox())],
+        ["count", new Node(new NumberBox())],
+        ["global", new Node(new CheckBox())],
+        ["algorithm", new Node(new SelectBox(["none", "some", "all"]))],
+        ["notes", new Node(new TextArea())],
+        ["", new Node(new Button("Generate", () => out.setText(Math.random())))],
+        ["", new Node(out = new TextOutput())]
+      ]));
+
+      document.body.append(node.control.getElement());
+    </script>
+  </body>
+</html>
